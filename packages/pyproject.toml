@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "symmech"
+version = "0.1.0"
+description = "Symbolic Structural Mechanics Library for Aerospace Structures"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "sympy>=1.12",    # Core symbolic math
+    "numpy>=1.24",    # Numerical array handling
+    "scipy>=1.10",    # Advanced solvers
+    "plotly>=5.15",   # Visualization (V0.1 Spec)
+    "networkx>=3.0"   # Graph theory for Section topology (V0.2 Spec)
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black",
+    "flake8"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
